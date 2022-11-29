@@ -19,7 +19,7 @@ namespace InGame.WebUI.ApiServices.Concrete
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public AuthApiManager( IHttpContextAccessor httpContextAccessor)
+        public AuthApiManager(IHttpContextAccessor httpContextAccessor)
         {
             _httpContextAccessor = httpContextAccessor;
         }
@@ -38,7 +38,7 @@ namespace InGame.WebUI.ApiServices.Concrete
                         new MediaTypeWithQualityHeaderValue("application/json"));
                     client.Timeout = new TimeSpan(3000);
                     client.BaseAddress = new Uri("http://localhost:44360/api/Auth/");
-                    var response = client.PostAsync("Login",content)
+                    var response = client.PostAsync("Login", content)
                         .ConfigureAwait(false);
 
                     try
